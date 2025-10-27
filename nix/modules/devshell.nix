@@ -21,6 +21,7 @@ in {
       nativeBuildInputs = with pkgs;
         [
           bun
+          nodejs
           eslint
           just
           prettierd

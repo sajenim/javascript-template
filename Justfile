@@ -6,6 +6,10 @@ default:
 dev:
     bun run dev
 
+# Start interactive REPL with auto-loaded helpers
+repl:
+    node --eval "await import('./.replrc.js')" -i
+
 # Add a package dependency
 add package:
     bun add {{package}}
@@ -33,6 +37,10 @@ install:
 # Update flake inputs
 update:
     nix flake update
+
+# Upgrade package dependencies
+upgrade:
+    bun update
 
 # Clean build artifacts and dependencies
 clean:

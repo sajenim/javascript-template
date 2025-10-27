@@ -3,8 +3,9 @@
 A minimal JavaScript development template using Nix. Key features:
 
 - Nix + Flakes for reproducible environments
-- Bun (fast JavaScript runtime)
+- Bun (fast JavaScript runtime & package manager)
 - Vite (development server & build tool)
+- Node.js (mature REPL with custom helpers)
 - ESLint + Prettier (linting & formatting)
 - Devshell commands via just
 
@@ -37,14 +38,29 @@ just dev
 fhs = true;
 ```
 
+## Available Commands
+
+Run `just` to see all available commands:
+
+```sh
+just dev       # Start dev server
+just repl      # Node.js REPL with helpers
+just lint      # Lint with ESLint
+just format    # Format with Prettier
+just build     # Production build
+just clean     # Clean build artifacts
+just update    # Update flake inputs
+just upgrade   # Upgrade bun packages
+```
+
 ## Customization
 
 This template provides minimal, sensible defaults. Customize as needed:
 
-- Add dependencies: `just add <package>`
 - Modify linting rules in `eslint.config.js`
 - Add Prettier config via `.prettierrc` if needed
 - Extend `Justfile` with project-specific commands
+- Add custom REPL helpers in `.replrc.js`
 
 ## Acknowledgments
 
